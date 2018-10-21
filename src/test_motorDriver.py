@@ -13,8 +13,9 @@ class TestMotorDriver(unittest.TestCase):
             position = (int)(2048 + (300*math.sin(time.time())))
             for ID in self.dynM.IDs:
                 self.dynM.write_goal(ID,position)
-            time.sleep(.01)
+            time.sleep(.0025)
             self.dynM.poll_current_positions()
+            time.sleep(.0025)
             # print round(endTime -time.time(), 3), self.dynM.read_currents()
             iter = iter + 1.0
         print "Message Cycles Per Second: ", 1.0/(timeElapse/iter)
