@@ -1,0 +1,178 @@
+servos:
+  33:
+    ID: 33
+    name: HipFR
+    center: 2000
+    swing: 2048
+    polarity: 1.0
+    min_degrees: -90.0
+    max_degrees: 90.0
+    min_safe_ticks: 1488
+    max_safe_ticks: 2512
+    default_loc_ticks: 2000
+  32:
+    ID: 32
+    name: HipFL
+    center: 2096
+    swing: 2048
+    polarity: -1.0
+    min_degrees: -90.0
+    max_degrees: 90.0
+    min_safe_ticks: 1584
+    max_safe_ticks: 2608
+    default_loc_ticks: 2096
+  35:
+    ID: 35
+    name: HipBR
+    center: 2096
+    swing: 2048
+    polarity: -1.0
+    min_degrees: -90.0
+    max_degrees: 90.0
+    min_safe_ticks: 1584
+    max_safe_ticks: 2608
+    default_loc_ticks: 2096
+  34:
+    ID: 34
+    name: HipBL
+    center: 2000
+    swing: 2048
+    polarity: 1.0
+    min_degrees: -90.0
+    max_degrees: 90.0
+    min_safe_ticks: 1488
+    max_safe_ticks: 2512
+    default_loc_ticks: 2000
+  38:
+    ID: 38
+    name: FemurFAR
+    center: 2048
+    swing: 2048
+    polarity: 1.0
+    min_degrees: -180.0
+    max_degrees: 180.0
+    min_safe_ticks: 1024
+    max_safe_ticks: 3072
+    default_loc_ticks: 3072
+  36:
+    ID: 36
+    name: FemurFBR
+    center: 2048
+    swing: 2048
+    polarity: -1.0
+    min_degrees: -180.0
+    max_degrees: 180.0
+    min_safe_ticks: 1024
+    max_safe_ticks: 3072
+    default_loc_ticks: 1024
+  42:
+    ID: 42
+    name: FemurFAL
+    center: 2048
+    swing: 2048
+    polarity: -1.0
+    min_degrees: -180.0
+    max_degrees: 180.0
+    min_safe_ticks: 1024
+    max_safe_ticks: 3072
+    default_loc_ticks: 1024
+  40:
+    ID: 40
+    name: FemurFBL
+    center: 2048
+    swing: 2048
+    polarity: 1.0
+    min_degrees: -180.0
+    max_degrees: 180.0
+    min_safe_ticks: 1024
+    max_safe_ticks: 3072
+    default_loc_ticks: 3072
+  37:
+    ID: 37
+    name: FemurBAR
+    center: 2048
+    swing: 2048
+    polarity: 1.0
+    min_degrees: -180.0
+    max_degrees: 180.0
+    min_safe_ticks: 1024
+    max_safe_ticks: 3072
+    default_loc_ticks: 3072
+  39:
+    ID: 39
+    name: FemurBBR
+    center: 2048
+    swing: 2048
+    polarity: -1.0
+    min_degrees: -180.0
+    max_degrees: 180.0
+    min_safe_ticks: 1024
+    max_safe_ticks: 3072
+    default_loc_ticks: 1024
+  41:
+    ID: 41
+    name: FemurBAL
+    center: 2048
+    swing: 2048
+    polarity: -1.0
+    min_degrees: -180.0
+    max_degrees: 180.0
+    min_safe_ticks: 1024
+    max_safe_ticks: 3072
+    default_loc_ticks: 1024
+  43:
+    ID: 43
+    name: FemurBBL
+    center: 2048
+    swing: 2048
+    polarity: 1.0
+    min_degrees: -180.0
+    max_degrees: 180.0
+    min_safe_ticks: 1024
+    max_safe_ticks: 3072
+    default_loc_ticks: 3072
+  28:
+    ID: 28
+    name: HeadGearR
+    center: 2048
+    swing: 2048
+    polarity: 1.0
+    min_degrees: -180.0
+    max_degrees: 180.0
+    min_safe_ticks: 1024
+    max_safe_ticks: 3072
+    default_loc_ticks: 2048
+  29:
+    ID: 29
+    name: HeadGearL
+    center: 2048
+    swing: 2048
+    polarity: -1.0
+    min_degrees: -180.0
+    max_degrees: 180.0
+    min_safe_ticks: 1024
+    max_safe_ticks: 3072
+    default_loc_ticks: 2048
+  30:
+    ID: 30
+    name: HeadPivotL
+    center: 2048
+    swing: 2048
+    polarity: 1.0
+    min_degrees: -180.0
+    max_degrees: 180.0
+    min_safe_degrees: -45.0
+    max_safe_degrees: 45.0
+    default_loc_ticks: 2048
+  31:
+    ID: 31
+    name: HeadPivotR
+    center: 2048
+    swing: 2048
+    polarity: -1.0
+    min_degrees: -180.0
+    max_degrees: 180.0
+    min_safe_degrees: -45.0
+    max_safe_degrees: 45.0
+    default_loc_ticks: 2048
+segments: None

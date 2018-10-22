@@ -2,7 +2,7 @@ import yaml
 import servo_handler
 
 def load_servos_config(driver, filePath):
-    stream = open(yamlConfig, "r")
+    stream = open(filePath, "r")
     config = yaml.load(stream)
     servoSet = {}
     for ID in config['servos'].keys():
