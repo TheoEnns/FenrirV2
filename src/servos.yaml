@@ -153,26 +153,122 @@ servos:
     min_safe_ticks: 1024
     max_safe_ticks: 3072
     default_loc_ticks: 2048
-  30:
-    ID: 30
-    name: HeadPivotL
-    center: 2048
-    swing: 2048
-    polarity: 1.0
-    min_degrees: -180.0
-    max_degrees: 180.0
-    min_safe_degrees: -45.0
-    max_safe_degrees: 45.0
-    default_loc_ticks: 2048
-  31:
-    ID: 31
-    name: HeadPivotR
-    center: 2048
-    swing: 2048
-    polarity: -1.0
-    min_degrees: -180.0
-    max_degrees: 180.0
-    min_safe_degrees: -45.0
-    max_safe_degrees: 45.0
-    default_loc_ticks: 2048
-segments: None
+#  30:
+#    ID: 30
+#    name: HeadPivotL
+#    center: 2048
+#    swing: 2048
+#    polarity: 1.0
+#    min_degrees: -180.0
+#    max_degrees: 180.0
+#    min_safe_degrees: -45.0
+#    max_safe_degrees: 45.0
+#    default_loc_ticks: 2048
+#  31:
+#    ID: 31
+#    name: HeadPivotR
+#    center: 2048
+#    swing: 2048
+#    polarity: -1.0
+#    min_degrees: -180.0
+#    max_degrees: 180.0
+#    min_safe_degrees: -45.0
+#    max_safe_degrees: 45.0
+#    default_loc_ticks: 2048
+segments:
+    LegFL: #Forward left
+        HipSocket:
+            X: 85.0
+            Y: 35.0
+            Z: 0.0
+            R: 91.9238815542512
+            Theta: 0.390607043697687
+        FemurRoll:
+            X: 14.25
+            Y: 32.625
+            Z: 0.0
+            R: 35.6013079113675
+            Theta: 1.15898902143318
+        FemurSwing:
+            X: 56.74284096
+            Y: 32.625
+            Z: 19.5
+            R: 60.0
+            Theta: 0.350806912295102
+        Tibia:
+            Length: 120.0
+        Foot:
+            X: 40.0
+            Y: 15.70919027
+    LegBL: #backward left
+        HipSocket:
+            X: -85.0
+            Y: 35.0
+            Z: 0.0
+            R: 91.9238815542512
+            Theta: 2.75098560989211
+        FemurRoll:
+            X: -14.25
+            Y: 32.625
+            Z: 0.0
+            R: 35.6013079113675
+            Theta: 1.98260363215661
+        FemurSwing:
+            X: 56.74284096
+            Y: 32.625
+            Z: 19.5
+            R: 60.0
+            Theta: 0.350806912295102
+        Tibia:
+            Length: 120.0
+        Foot:
+            X: 40.0
+            Y: 15.70919027
+    LegBR: #backward right
+        HipSocket:
+            X: -85.0
+            Y: -35.0
+            Z: 0.0
+            R: 91.9238815542512
+            Theta: 3.53219959010789
+        FemurRoll:
+            X: 14.25
+            Y: 32.625
+            Z: 0.0
+            R: 35.6013079113675
+            Theta: 1.15898902143318
+        FemurSwing:
+            X: 56.74284096
+            Y: 32.625
+            Z: 19.5
+            R: 60.0
+            Theta: 0.350806912295102
+        Tibia:
+            Length: 120.0
+        Foot:
+            X: 40.0
+            Y: 15.70919027
+    LegFR: #Forward right
+        HipSocket:
+            X: 85.0
+            Y: -35.0
+            Z: 0.0
+            R: 91.9238815542512
+            Theta: 5.89257815630231
+        FemurRoll:
+            X: -14.25
+            Y: 32.625
+            Z: 0.0
+            R: 35.6013079113675
+            Theta: 1.98260363215661
+        FemurSwing:
+            X: 56.74284096
+            Y: 32.625
+            Z: 19.5
+            R: 60.0
+            Theta: 0.350806912295102
+        Tibia:
+            Length: 120.0
+        Foot:
+            X: 40.0
+            Y: 15.70919027

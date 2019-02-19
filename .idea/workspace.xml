@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="20e6a4c9-53d9-4784-b13e-56e2f19dfc04" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/rhombusLeg.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test_servoControl.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test_rhombusLeg.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/configLoader.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/configLoader.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/servo_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/servo_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rhombusLeg.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/rhombusLeg.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/servos.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/servos.yaml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,35 +19,37 @@
       <usages-collector id="statistics.lifecycle.project">
         <counts>
           <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.16" value="1" />
+          <entry key="project.open.time.18" value="1" />
           <entry key="project.open.time.46" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="6" />
+          <entry key="py" value="7" />
           <entry key="yaml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="6" />
+          <entry key="Python" value="7" />
           <entry key="YAML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Python Console" value="121" />
-          <entry key="dummy" value="50" />
-          <entry key="py" value="2430" />
-          <entry key="yaml" value="557" />
+          <entry key="dummy" value="51" />
+          <entry key="py" value="3261" />
+          <entry key="yaml" value="821" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="50" />
-          <entry key="Python" value="2551" />
-          <entry key="YAML" value="557" />
+          <entry key="PLAIN_TEXT" value="51" />
+          <entry key="Python" value="3382" />
+          <entry key="YAML" value="821" />
         </counts>
       </usages-collector>
     </session>
@@ -58,8 +59,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/servo_handler.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="11" selection-end-column="46" />
+            <state relative-caret-position="165">
+              <caret line="11" column="39" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
               <folding>
                 <marker date="1540179945480" expanded="true" signature="3749:5407" ph="..." />
                 <marker date="1540179945480" expanded="true" signature="5500:5502" ph="..." />
@@ -72,8 +73,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/servos.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="162" column="22" selection-start-line="162" selection-start-column="22" selection-end-line="162" selection-end-column="22" />
+            <state relative-caret-position="48">
+              <caret line="179" column="17" selection-start-line="179" selection-start-column="8" selection-end-line="179" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -81,11 +82,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/configLoader.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="28" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
+            <state relative-caret-position="195">
+              <caret line="13" column="26" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
-                <marker date="1540161228433" expanded="true" signature="75:76" ph="..." />
+                <marker date="1548052689876" expanded="true" signature="75:76" ph="..." />
               </folding>
             </state>
           </provider>
@@ -94,8 +95,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/motorDriver.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2685">
-              <caret line="180" selection-start-line="180" selection-end-line="180" />
+            <state relative-caret-position="465">
+              <caret line="31" selection-start-line="31" selection-end-line="31" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -103,11 +104,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test_motorDriver.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/rhombusLeg.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="17" column="29" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
+            <state relative-caret-position="466">
+              <caret line="35" column="39" selection-start-line="35" selection-start-column="39" selection-end-line="35" selection-end-column="39" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -118,22 +119,39 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test_servoControl.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="44" lean-forward="true" selection-start-line="10" selection-start-column="44" selection-end-line="10" selection-end-column="44" />
+            <state relative-caret-position="392">
+              <caret line="90" column="25" lean-forward="true" selection-start-line="90" selection-start-column="25" selection-end-line="91" selection-end-column="79" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
-                <marker date="1540180058793" expanded="true" signature="133:138" ph="..." />
-                <marker date="1540180058793" expanded="true" signature="3147:3156" ph="..." />
+                <marker date="1547430472718" expanded="true" signature="133:138" ph="..." />
+                <marker date="1547430472718" expanded="true" signature="3147:3156" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/rhombusLeg.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test_motorDriver.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
+            <state relative-caret-position="150">
+              <caret line="10" column="42" lean-forward="true" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test_rhombusLeg.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+                <marker date="1548052711072" expanded="true" signature="132:134" ph="..." />
+                <marker date="1548052711072" expanded="true" signature="154:250" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -152,6 +170,7 @@
       <find>math.degrees</find>
       <find>self.ticks</find>
       <find>2ticks</find>
+      <find>configLoader</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -163,11 +182,14 @@
         <option value="$PROJECT_DIR$/src/test_motorDriver.py" />
         <option value="$PROJECT_DIR$/src/motorConfig.py" />
         <option value="$PROJECT_DIR$/src/servoConfig.py" />
-        <option value="$PROJECT_DIR$/src/configLoader.py" />
-        <option value="$PROJECT_DIR$/src/servos.yaml" />
         <option value="$PROJECT_DIR$/src/servo_handler.py" />
-        <option value="$PROJECT_DIR$/src/test_servoControl.py" />
         <option value="$PROJECT_DIR$/src/Leg_Structure.py" />
+        <option value="$PROJECT_DIR$/src/motorDriver.py" />
+        <option value="$PROJECT_DIR$/src/test_servoControl.py" />
+        <option value="$PROJECT_DIR$/src/test_rhonbusLeg.py" />
+        <option value="$PROJECT_DIR$/src/servos.yaml" />
+        <option value="$PROJECT_DIR$/src/configLoader.py" />
+        <option value="$PROJECT_DIR$/src/test_rhombusLeg.py" />
         <option value="$PROJECT_DIR$/src/rhombusLeg.py" />
       </list>
     </option>
@@ -175,7 +197,7 @@
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="65" />
     <option name="y" value="-4" />
-    <option name="width" value="1855" />
+    <option name="width" value="928" />
     <option name="height" value="1084" />
   </component>
   <component name="ProjectView">
@@ -208,7 +230,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -227,7 +249,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.Nosetests in test_servoControl.py">
+  <component name="RunManager" selected="Python tests.Nosetests in test_rhombusLeg.py">
     <configuration name="servo_handler" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="fenrir_controller" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -249,6 +271,21 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Nosetests for test_servoControl.TestServoControl.test_femur_sweep_fractions" type="tests" factoryName="Nosetests" temporary="true" nameIsGenerated="true">
+      <module name="fenrir_controller" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_regexPattern" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_servoControl.TestServoControl.test_femur_sweep_fractions&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
     <configuration name="Nosetests in test_motorDriver.py" type="tests" factoryName="Nosetests" temporary="true" nameIsGenerated="true">
       <module name="fenrir_controller" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -261,6 +298,21 @@
       <option name="_new_regexPattern" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
       <option name="_new_target" value="&quot;$PROJECT_DIR$/src/test_motorDriver.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Nosetests in test_rhombusLeg.py" type="tests" factoryName="Nosetests" temporary="true" nameIsGenerated="true">
+      <module name="fenrir_controller" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_regexPattern" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/src/test_rhombusLeg.py&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
@@ -283,11 +335,15 @@
       <item itemvalue="Python tests.Nosetests in test_motorDriver.py" />
       <item itemvalue="Python.servo_handler" />
       <item itemvalue="Python tests.Nosetests in test_servoControl.py" />
+      <item itemvalue="Python tests.Nosetests for test_servoControl.TestServoControl.test_femur_sweep_fractions" />
+      <item itemvalue="Python tests.Nosetests in test_rhombusLeg.py" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Nosetests in test_servoControl.py" />
+        <item itemvalue="Python tests.Nosetests in test_rhombusLeg.py" />
         <item itemvalue="Python tests.Nosetests in test_motorDriver.py" />
+        <item itemvalue="Python tests.Nosetests in test_servoControl.py" />
+        <item itemvalue="Python tests.Nosetests for test_servoControl.TestServoControl.test_femur_sweep_fractions" />
         <item itemvalue="Python.servo_handler" />
       </list>
     </recent_temporary>
@@ -306,39 +362,39 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Nosetests_in_test_servoControl_py - 2018.10.21 at 20h 37m 36s.xml">
+    <history-entry file="Nosetests_in_test_servoControl_py - 2019.01.13 at 17h 52m 45s.xml">
       <configuration name="Nosetests in test_servoControl.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Nosetests_in_test_servoControl_py - 2018.10.21 at 20h 37m 54s.xml">
+    <history-entry file="Nosetests_in_test_motorDriver_py - 2019.01.20 at 18h 40m 20s.xml">
+      <configuration name="Nosetests in test_motorDriver.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_in_test_motorDriver_py - 2019.01.20 at 18h 41m 23s.xml">
+      <configuration name="Nosetests in test_motorDriver.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_in_test_servoControl_py - 2019.01.20 at 18h 41m 46s.xml">
       <configuration name="Nosetests in test_servoControl.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Nosetests_in_test_servoControl_py - 2018.10.21 at 20h 38m 03s.xml">
-      <configuration name="Nosetests in test_servoControl.py" configurationId="tests" />
+    <history-entry file="Nosetests_in_test_motorDriver_py - 2019.01.20 at 18h 45m 03s.xml">
+      <configuration name="Nosetests in test_motorDriver.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Nosetests_in_test_servoControl_py - 2018.10.21 at 20h 38m 15s.xml">
-      <configuration name="Nosetests in test_servoControl.py" configurationId="tests" />
+    <history-entry file="Nosetests_in_test_motorDriver_py - 2019.01.20 at 18h 45m 51s.xml">
+      <configuration name="Nosetests in test_motorDriver.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Nosetests_in_test_servoControl_py - 2018.10.21 at 20h 39m 12s.xml">
-      <configuration name="Nosetests in test_servoControl.py" configurationId="tests" />
+    <history-entry file="Nosetests_in_test_motorDriver_py - 2019.01.20 at 19h 02m 56s.xml">
+      <configuration name="Nosetests in test_motorDriver.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Nosetests_in_test_servoControl_py - 2018.10.21 at 20h 39m 58s.xml">
-      <configuration name="Nosetests in test_servoControl.py" configurationId="tests" />
+    <history-entry file="Nosetests_in_test_motorDriver_py - 2019.01.20 at 19h 06m 37s.xml">
+      <configuration name="Nosetests in test_motorDriver.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Nosetests_in_test_servoControl_py - 2018.10.21 at 20h 40m 41s.xml">
-      <configuration name="Nosetests in test_servoControl.py" configurationId="tests" />
+    <history-entry file="Nosetests_in_test_rhombusLeg_py - 2019.01.20 at 22h 37m 34s.xml">
+      <configuration name="Nosetests in test_rhombusLeg.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Nosetests_in_test_servoControl_py - 2018.10.21 at 20h 41m 27s.xml">
-      <configuration name="Nosetests in test_servoControl.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Nosetests_in_test_servoControl_py - 2018.10.21 at 20h 45m 02s.xml">
-      <configuration name="Nosetests in test_servoControl.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Nosetests_in_test_servoControl_py - 2018.10.21 at 20h 46m 51s.xml">
-      <configuration name="Nosetests in test_servoControl.py" configurationId="tests" />
+    <history-entry file="Nosetests_in_test_rhombusLeg_py - 2019.01.20 at 22h 38m 14s.xml">
+      <configuration name="Nosetests in test_rhombusLeg.py" configurationId="tests" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
+    <frame x="64" y="-11" width="1857" height="1092" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.125" />
@@ -346,13 +402,13 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3294979" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3294979" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3294979" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.3294979" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32845187" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.3294979" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -364,60 +420,10 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/motorDriver.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2685">
-          <caret line="180" selection-start-line="180" selection-end-line="180" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test_motorDriver.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="17" column="29" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/configLoader.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="28" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-            <marker date="1540161228433" expanded="true" signature="75:76" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/servos.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="162" column="22" selection-start-line="162" selection-start-column="22" selection-end-line="162" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test_servoControl.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="44" lean-forward="true" selection-start-line="10" selection-start-column="44" selection-end-line="10" selection-end-column="44" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <marker date="1540180058793" expanded="true" signature="133:138" ph="..." />
-            <marker date="1540180058793" expanded="true" signature="3147:3156" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/servo_handler.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="11" selection-end-column="46" />
+        <state relative-caret-position="165">
+          <caret line="11" column="39" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
           <folding>
             <marker date="1540179945480" expanded="true" signature="3749:5407" ph="..." />
             <marker date="1540179945480" expanded="true" signature="5500:5502" ph="..." />
@@ -426,10 +432,75 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test_motorDriver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="42" lean-forward="true" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test_servoControl.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="90" column="25" lean-forward="true" selection-start-line="90" selection-start-column="25" selection-end-line="91" selection-end-column="79" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+            <marker date="1547430472718" expanded="true" signature="133:138" ph="..." />
+            <marker date="1547430472718" expanded="true" signature="3147:3156" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/motorDriver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/configLoader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="26" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+            <marker date="1548052689876" expanded="true" signature="75:76" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test_rhombusLeg.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+            <marker date="1548052711072" expanded="true" signature="132:134" ph="..." />
+            <marker date="1548052711072" expanded="true" signature="154:250" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/servos.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="179" column="17" selection-start-line="179" selection-start-column="8" selection-end-line="179" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/rhombusLeg.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
+        <state relative-caret-position="466">
+          <caret line="35" column="39" selection-start-line="35" selection-start-column="39" selection-end-line="35" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
