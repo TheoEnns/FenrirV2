@@ -89,7 +89,7 @@ class TestServoControl(unittest.TestCase):
         print "> setUp"
         self.dynM = motorDriver.DynamixelMaster()
         self.dynM.start()
-        self.joints = configLoader.load_servos_config(self.dynM, "servos.yaml")
+        self.joints, legs = configLoader.load_servos_config(self.dynM, "servos.yaml")
 
 
 if __name__ == '__main__':

@@ -45,7 +45,7 @@ servos:
     default_loc_ticks: 2000
   38:
     ID: 38
-    name: FemurFAR
+    name: FemurAFR
     center: 2048
     swing: 2048
     polarity: 1.0
@@ -56,7 +56,7 @@ servos:
     default_loc_ticks: 3072
   36:
     ID: 36
-    name: FemurFBR
+    name: FemurBFR
     center: 2048
     swing: 2048
     polarity: -1.0
@@ -67,7 +67,7 @@ servos:
     default_loc_ticks: 1024
   42:
     ID: 42
-    name: FemurFAL
+    name: FemurAFL
     center: 2048
     swing: 2048
     polarity: -1.0
@@ -78,7 +78,7 @@ servos:
     default_loc_ticks: 1024
   40:
     ID: 40
-    name: FemurFBL
+    name: FemurBFL
     center: 2048
     swing: 2048
     polarity: 1.0
@@ -89,7 +89,7 @@ servos:
     default_loc_ticks: 3072
   37:
     ID: 37
-    name: FemurBAR
+    name: FemurABR
     center: 2048
     swing: 2048
     polarity: 1.0
@@ -111,7 +111,7 @@ servos:
     default_loc_ticks: 1024
   41:
     ID: 41
-    name: FemurBAL
+    name: FemurABL
     center: 2048
     swing: 2048
     polarity: -1.0
@@ -183,6 +183,18 @@ segments:
             Z: 0.0
             R: 91.9238815542512
             Theta: 0.390607043697687
+        HipSwingA:
+            X: 70.75
+            Y: 32.625
+            Z: 0.0
+            R: 32.625
+            Theta: 0.0
+        HipSwingB:
+            X: 99.25
+            Y: 32.625
+            Z: 0.0
+            R: 32.625
+            Theta: 0.0
         FemurRoll:
             X: 14.25
             Y: 32.625
@@ -207,6 +219,18 @@ segments:
             Z: 0.0
             R: 91.9238815542512
             Theta: 2.75098560989211
+        HipSwingA:
+            X: -70.75
+            Y: 32.625
+            Z: 0.0
+            R: 32.625
+            Theta: 0.0
+        HipSwingB:
+            X: -99.25
+            Y: 32.625
+            Z: 0.0
+            R: 32.625
+            Theta: 0.0
         FemurRoll:
             X: -14.25
             Y: 32.625
@@ -231,6 +255,18 @@ segments:
             Z: 0.0
             R: 91.9238815542512
             Theta: 3.53219959010789
+        HipSwingA:
+            X: -70.75
+            Y: -32.625
+            Z: 0.0
+            R: 32.625
+            Theta: 0.0
+        HipSwingB:
+            X: -99.25
+            Y: -32.625
+            Z: 0.0
+            R: 32.625
+            Theta: 0.0
         FemurRoll:
             X: 14.25
             Y: 32.625
@@ -255,6 +291,18 @@ segments:
             Z: 0.0
             R: 91.9238815542512
             Theta: 5.89257815630231
+        HipSwingA:
+            X: 70.75
+            Y: -32.625
+            Z: 0.0
+            R: 32.625
+            Theta: 0.0
+        HipSwingB:
+            X: 99.25
+            Y: -32.625
+            Z: 0.0
+            R: 32.625
+            Theta: 0.0
         FemurRoll:
             X: -14.25
             Y: 32.625
