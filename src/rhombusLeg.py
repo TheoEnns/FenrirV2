@@ -4,6 +4,11 @@ import math
 PI_2 = math.pi / 2
 TAU = math.pi * 2
 
+SIDE_RIGHT =  -1
+SIDE_LEFT =    1
+DORSAL_FRONT = 1
+DORSAL_BACK = -1
+
 class rhombusLeg():
     ####
     # initialization
@@ -18,6 +23,14 @@ class rhombusLeg():
         self.config = configuration[legID]
         self.driver = driver
         self.HipSocket = np.array([self.config["HipSocket"]["X"], self.config["HipSocket"]["Y"], self.config["HipSocket"]["Z"]])
+        if self.config["HipSocket"]["Y"] < 0.0:
+            self.sidePolarity = SIDE_RIGHT #"RIGHT"
+        else:
+            self.sidePolarity = SIDE_LEFT #"LEFT"
+        if self.config["HipSocket"]["X"] > 0.0:
+            self.dorsalPolarity = DORSAL_FRONT #"FRONT"
+        else:
+            self.dorsalPolarity = DORSAL_BACK #"BACK"
         self.HipSwingY = self.config["HipSwingA"]["Y"]
         self.HipSwingAX = self.config["HipSwingA"]["X"]
         self.HipSwingBX = self.config["HipSwingB"]["X"]
@@ -26,7 +39,6 @@ class rhombusLeg():
         self.FemurRoll = np.array([self.config["FemurRoll"]["X"], self.config["FemurRoll"]["Y"], self.config["FemurRoll"]["Z"]])
         self.FemurSwing = np.array([self.config["FemurSwing"]["X"], self.config["FemurSwing"]["Y"], self.config["FemurSwing"]["Z"]])
         self.HipSocketR = self.config["HipSocket"]["R"]
-        #self.FemurRollR = self.config["FemurRoll"]["R"]
         self.FemurSwingR = self.config["FemurSwing"]["R"]
         self.FootX = self.config["Foot"]["X"]
         self.FootY = self.config["Foot"]["Y"]
@@ -36,8 +48,9 @@ class rhombusLeg():
         hip2floor = self.HipSocket - floorTarget + np.array([ 0, self.HipSwingY, 0])
         forward_angle = math.atan2( hip2floor[0], hip2floor[2])
         left_angle = math.atan2( hip2floor[1], hip2floor[2])
+        # print left_angle
         forward_roll = self.FootX*forward_angle/TAU # Approximate perturbation from the X-diameter of the foot
-        left_roll = self.FootY*left_angle/TAU # Approximate perturbation from the Y-diameter of the foot
+        left_roll = self.FootY * left_angle/TAU # Approximate perturbation from the Y-diameter of the foot
         footAnchor = floorTarget + np.array([ forward_roll, left_roll, 0])
         footCenter = footAnchor + np.array([ 0,
                                              0,
@@ -52,7 +65,10 @@ class rhombusLeg():
         legYZlength = math.sqrt(hypotuneuseRsqr - self.HipSwingRsqr)
         hypotuneuseAngle = math.atan2(hypotuneuse[2], - hypotuneuse[1])
         secondAngle = math.asin(legYZlength/math.sqrt(hypotuneuseRsqr))
-        hipSocket_Angle = -(math.pi - hypotuneuseAngle - secondAngle)
+        if self.sidePolarity == SIDE_RIGHT:
+            hipSocket_Angle = -math.pi + hypotuneuseAngle + secondAngle
+        else:
+            hipSocket_Angle = - hypotuneuseAngle + secondAngle
         femurPivotPoint = self.HipSocket \
                          + np.array([ 0, self.HipSwingY*math.cos(hipSocket_Angle),
                                       -self.HipSwingR*math.sin(hipSocket_Angle)])
@@ -61,32 +77,32 @@ class rhombusLeg():
         footCenterInHipPlane = np.array([ hypotuneuse[0], -legYZlength])
         femurAInHipPlane = np.array([ self.HipSwingAX - self.HipSocket[0], 0])
         femurBInHipPlane = np.array([ self.HipSwingBX - self.HipSocket[0], 0])
-        return True, hipSocket_Angle, footCenterInHipPlane, femurAInHipPlane, femurBInHipPlane
+        return True, hipSocket_Angle, footCenterInHipPlane, femurAInHipPlane, femurBInHipPlane #, femurA, femurB
 
     def _solve_Femurs(self, footCenterInHipPlane, femurAInHipPlane, femurBInHipPlane):
         intersectsA = intersectionOfCircles(footCenterInHipPlane, self.Tibia, femurAInHipPlane, self.FemurSwingR)
         intersectsB = intersectionOfCircles(footCenterInHipPlane, self.Tibia, femurBInHipPlane, self.FemurSwingR)
-        #print intersectsA, intersectsB
+        # print intersectsA, intersectsB
         femurA_Angle = math.pi
         femurB_Angle = math.pi
         outermostX = 60
         for item in intersectsA:
             tempVect = item - femurAInHipPlane
-            tempAngle = math.atan2( tempVect[1], -tempVect[0])
+            tempAngle = math.atan2(tempVect[1], -tempVect[0])
             # print tempAngle
-            if(outermostX > tempVect[0]):
+            if (outermostX > tempVect[0]):
                 outermostX = tempVect[0]
                 femurA_Angle = tempAngle
-            #print np.linalg.norm(item - femurAInHipPlane)
+            # print np.linalg.norm(item - femurAInHipPlane)
         outermostX = -60
         for item in intersectsB:
             tempVect = item - femurBInHipPlane
-            tempAngle = math.atan2( tempVect[1], tempVect[0])
+            tempAngle = math.atan2(tempVect[1], tempVect[0])
             # print tempAngle
-            if(outermostX < tempVect[0]):
+            if (outermostX < tempVect[0]):
                 outermostX = tempVect[0]
                 femurB_Angle = tempAngle
-            #print np.linalg.norm(item - femurBInHipPlane)
+            # print np.linalg.norm(item - femurBInHipPlane)
         return True, femurA_Angle, femurB_Angle
 
     def calculate_IK(self, floorTarget):
@@ -133,10 +149,12 @@ if __name__ == '__main__':
     dynM = motorDriver.DynamixelMaster()
     joints, legs = configLoader.load_servos_config(dynM, "servos.yaml")
     myLeg = rhombusLeg("LegFR", legs, dynM)
-    # success, footCenter, footAnchor =  myLeg._solve_foot(np.array([ 85.0 + 0.0, -67.625 + 0.0, -(162.72431069 + 20 - 0)]))
-    success, footCenter, footAnchor =  myLeg._solve_foot(np.array([ 85.0 + 0.0, -67.625 + 0.0, -(94.27055479 + 20 + 0)]))
+    # myLeg = rhombusLeg("LegBL", legs, dynM)
+    success, footCenter, footAnchor =  myLeg._solve_foot(np.array([ 85.0 + 30.0, -67.625 + 0.0, -(94.27055479 + 20 + 0)]))
+    # success, footCenter, footAnchor =  myLeg._solve_foot(np.array([ -85.0 + 30.0, 67.625 + 0.0, -(94.27055479 + 20 + 0)]))
+    print footCenter, footAnchor
     success, hipSocket_Angle, footCenterInHipPlane, femurAInHipPlane, femurBInHipPlane = myLeg._solve_Hip(footCenter)
-    # print footCenterInHipPlane, femurAInHipPlane, femurBInHipPlane
+    print hipSocket_Angle, footCenterInHipPlane, femurAInHipPlane, femurBInHipPlane
     success, femurA_Angle, femurB_Angle = myLeg._solve_Femurs(footCenterInHipPlane, femurAInHipPlane, femurBInHipPlane)
     print femurA_Angle, femurB_Angle, footCenter
 

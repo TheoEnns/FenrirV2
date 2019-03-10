@@ -45,108 +45,106 @@ LOW_FEMURB_Y = 67.625
 LOW_FEMURB_X = 118.75
 
 UPDATE_TIME = 0.001
+TIMER = 3
 MED_VEL = 10.0*(UPDATE_TIME/0.001)
 MED_DIST = 30
+REPS = 2
+
+def linear_path(legs,joints,x1,y1,z1,x2,y2,z2,timer):
+    max = (int)(timer/UPDATE_TIME)
+    print x2,y2,z2,timer
+    for indx in range(0, max, 1):
+        fraction = (float)(indx)/max
+        mid_place_legs(legs, joints,
+                       (x2 - x1) * fraction + x1,
+                       (y2 - y1) * fraction + y1,
+                       (z2 - z1) * fraction + z1)
+    time.sleep(0.001)
+
+def mid_place_legs(legs,joints,dx,dy,dz):
+    legs['FR'].perform_IK(
+        np.array([ MID_FOOT_CENTER_X + dx, -MID_FOOT_CENTER_Y + dy, -(MID_FOOT_CENTER_Z + 20 + dz)]),
+        joints)
+    legs['BR'].perform_IK(
+        np.array([-MID_FOOT_CENTER_X + dx, -MID_FOOT_CENTER_Y + dy, -(MID_FOOT_CENTER_Z + 20 + dz)]),
+        joints)
+    legs['FL'].perform_IK(
+        np.array([ MID_FOOT_CENTER_X + dx,  MID_FOOT_CENTER_Y + dy, -(MID_FOOT_CENTER_Z + 20 + dz)]),
+        joints)
+    legs['BL'].perform_IK(
+        np.array([-MID_FOOT_CENTER_X + dx,  MID_FOOT_CENTER_Y + dy, -(MID_FOOT_CENTER_Z + 20 + dz)]),
+        joints)
 
 class TestRhombusLeg(unittest.TestCase):
 
-    def test_LegInit(self):
-        print "> test_LegInit"
-        rhombusLeg.rhombusLeg("LegFR",self.legs,self.dynM)
+    # def test_LegInit(self):
+    #     print "> test_LegInit"
+    #     rhombusLeg.rhombusLeg("LegFR",self.legs,self.dynM)
+    #     rhombusLeg.rhombusLeg("LegBR",self.legs,self.dynM)
+    #     rhombusLeg.rhombusLeg("LegFL",self.legs,self.dynM)
+    #     rhombusLeg.rhombusLeg("LegBL",self.legs,self.dynM)
 
 
     def test_LegSquareXZ(self):
-        print "> test_LegInit"
-        myLeg = rhombusLeg.rhombusLeg("LegFR",self.legs,self.dynM)
-        for perturbation in range(0,(int)(MED_DIST*MED_VEL),1):
-            perturbation /= MED_VEL
-            myLeg.perform_IK(
-                np.array([ MID_FOOT_CENTER_X + perturbation, -MID_FOOT_CENTER_Y, -(MID_FOOT_CENTER_Z + 20 + perturbation)]), self.joints)
-            time.sleep(0.001)
-        for perturbation in range((int)(MED_DIST*MED_VEL),-(int)(MED_DIST*MED_VEL),-1):
-            perturbation /= MED_VEL
-            myLeg.perform_IK(
-                np.array([ MID_FOOT_CENTER_X + MED_DIST, -MID_FOOT_CENTER_Y, -(MID_FOOT_CENTER_Z + 20 + perturbation)]), self.joints)
-            time.sleep(0.001)
-        for perturbation in range((int)(MED_DIST*MED_VEL),-(int)(MED_DIST*MED_VEL),-1):
-            perturbation /= MED_VEL
-            myLeg.perform_IK(
-                np.array([ MID_FOOT_CENTER_X + perturbation, -MID_FOOT_CENTER_Y, -(MID_FOOT_CENTER_Z + 20 - MED_DIST)]), self.joints)
-            time.sleep(0.001)
-        for perturbation in range(-(int)(MED_DIST*MED_VEL),(int)(MED_DIST*MED_VEL),1):
-            perturbation /= MED_VEL
-            myLeg.perform_IK(
-                np.array([ MID_FOOT_CENTER_X - MED_DIST, -MID_FOOT_CENTER_Y, -(MID_FOOT_CENTER_Z + 20 + perturbation)]), self.joints)
-            time.sleep(0.001)
-        for perturbation in range(-(int)(MED_DIST*MED_VEL),0,1):
-            perturbation /= MED_VEL
-            myLeg.perform_IK(
-                np.array([ MID_FOOT_CENTER_X + perturbation, -MID_FOOT_CENTER_Y, -(MID_FOOT_CENTER_Z + 20 + MED_DIST)]), self.joints)
-            time.sleep(0.001)
-        for perturbation in range((int)(MED_DIST*MED_VEL),0,-1):
-            perturbation /= MED_VEL
-            myLeg.perform_IK(
-                np.array([ MID_FOOT_CENTER_X, -MID_FOOT_CENTER_Y, -(MID_FOOT_CENTER_Z + 20 + perturbation)]), self.joints)
-            time.sleep(0.001)
+        print "> test_LegSquareXZ"
+        legs = {}
+        legs['FR'] = rhombusLeg.rhombusLeg("LegFR", self.legs, self.dynM)
+        legs['BR'] = rhombusLeg.rhombusLeg("LegBR", self.legs, self.dynM)
+        legs['FL'] = rhombusLeg.rhombusLeg("LegFL", self.legs, self.dynM)
+        legs['BL'] = rhombusLeg.rhombusLeg("LegBL", self.legs, self.dynM)
+        magX = 30
+        magZ = 30
+        linear_path(legs, self.joints, 0,   0,  0,      0,      0,      -magZ,    TIMER/2.0)
+        for rep in range(REPS):
+            linear_path(legs, self.joints, 0,   0,  -magZ,    magX,     0,      -magZ,    TIMER)
+            linear_path(legs, self.joints, magX,  0,  -magZ,    magX,     0,      magZ,     TIMER)
+            linear_path(legs, self.joints, magX,  0,  magZ,     -magX,    0,      magZ,     TIMER)
+            linear_path(legs, self.joints, -magX, 0,  magZ,     -magX,    0,      -magZ,    TIMER)
+            linear_path(legs, self.joints, -magX, 0,  -magZ,    0,      0,      -magZ,    TIMER)
+        linear_path(legs, self.joints, 0,   0,  -magZ,    0,      0,      0,      TIMER/2.0)
 
     def test_LegSquareYZ(self):
-        print "> test_LegInit"
-        myLeg = rhombusLeg.rhombusLeg("LegFR",self.legs,self.dynM)
-        for perturbation in range(0,(int)(MED_DIST*MED_VEL),1):
-            perturbation /= MED_VEL
-            myLeg.perform_IK(
-                np.array([ MID_FOOT_CENTER_X, -MID_FOOT_CENTER_Y + perturbation, -(MID_FOOT_CENTER_Z + 20 + perturbation)]), self.joints)
-            time.sleep(0.001)
-        for perturbation in range((int)(MED_DIST*MED_VEL),-(int)(MED_DIST*MED_VEL),-1):
-            perturbation /= MED_VEL
-            myLeg.perform_IK(
-                np.array([ MID_FOOT_CENTER_X , -MID_FOOT_CENTER_Y+ MED_DIST, -(MID_FOOT_CENTER_Z + 20 + perturbation)]), self.joints)
-            time.sleep(0.001)
-        for perturbation in range((int)(MED_DIST*MED_VEL),-(int)(MED_DIST*MED_VEL),-1):
-            perturbation /= MED_VEL
-            myLeg.perform_IK(
-                np.array([ MID_FOOT_CENTER_X , -MID_FOOT_CENTER_Y + perturbation, -(MID_FOOT_CENTER_Z + 20 - MED_DIST)]), self.joints)
-            time.sleep(0.001)
-        for perturbation in range(-(int)(MED_DIST*MED_VEL),(int)(MED_DIST*MED_VEL),1):
-            perturbation /= MED_VEL
-            myLeg.perform_IK(
-                np.array([ MID_FOOT_CENTER_X , -MID_FOOT_CENTER_Y - MED_DIST, -(MID_FOOT_CENTER_Z + 20 + perturbation)]), self.joints)
-            time.sleep(0.001)
-        for perturbation in range(-(int)(MED_DIST*MED_VEL),0,1):
-            perturbation /= MED_VEL
-            myLeg.perform_IK(
-                np.array([ MID_FOOT_CENTER_X, -MID_FOOT_CENTER_Y + perturbation, -(MID_FOOT_CENTER_Z + 20 + MED_DIST)]), self.joints)
-            time.sleep(0.001)
-        for perturbation in range((int)(MED_DIST*MED_VEL),0,-1):
-            perturbation /= MED_VEL
-            myLeg.perform_IK(
-                np.array([ MID_FOOT_CENTER_X, -MID_FOOT_CENTER_Y, -(MID_FOOT_CENTER_Z + 20 + perturbation)]), self.joints)
-            time.sleep(0.001)
+        print "> test_LegSquareYZ"
+        legs = {}
+        legs['FR'] = rhombusLeg.rhombusLeg("LegFR", self.legs, self.dynM)
+        legs['BR'] = rhombusLeg.rhombusLeg("LegBR", self.legs, self.dynM)
+        legs['FL'] = rhombusLeg.rhombusLeg("LegFL", self.legs, self.dynM)
+        legs['BL'] = rhombusLeg.rhombusLeg("LegBL", self.legs, self.dynM)
+        magY = 20
+        magZ = 30
+        linear_path(legs, self.joints, 0,   0,    0,      0,    0,      -magZ,    TIMER/2.0)
+        for rep in range(REPS):
+            linear_path(legs, self.joints, 0,   0,    -magZ,    0,    magY,     -magZ,    TIMER)
+            linear_path(legs, self.joints, 0,   magY,   -magZ,    0,    magY,     magZ,     TIMER)
+            linear_path(legs, self.joints, 0,   magY,   magZ,     0,    -magY,     magZ,    TIMER)
+            linear_path(legs, self.joints, 0,   -magY,  magZ,     0,    -magY,    -magZ,    TIMER)
+            linear_path(legs, self.joints, 0,   -magY,  -magZ,    0,    0,      -magZ,    TIMER)
+        linear_path(legs, self.joints, 0,   0,   -magY,    0,    0,      0,      TIMER/2.0)
 
-    def test_LegSideToSide(self):
-        print "> test_LegInit"
-        myLeg = rhombusLeg.rhombusLeg("LegFR",self.legs,self.dynM)
-        for perturbation in range(0,(int)(MED_DIST*MED_VEL),1):
-            perturbation /= MED_VEL
-            myLeg.perform_IK(
-                np.array([ MID_FOOT_CENTER_X, -MID_FOOT_CENTER_Y + perturbation, -(MID_FOOT_CENTER_Z + 20 )]), self.joints)
-            time.sleep(0.001)
-        for rep in range(0,4):
-            for perturbation in range((int)(MED_DIST*MED_VEL), -(int)(MED_DIST*MED_VEL), -1):
-                perturbation /= MED_VEL
-                myLeg.perform_IK(
-                    np.array([ MID_FOOT_CENTER_X, -MID_FOOT_CENTER_Y + perturbation, -(MID_FOOT_CENTER_Z + 20 )]), self.joints)
-                time.sleep(0.001)
-            for perturbation in range(-(int)(MED_DIST*MED_VEL),(int)(MED_DIST*MED_VEL), 1):
-                perturbation /= MED_VEL
-                myLeg.perform_IK(
-                    np.array([ MID_FOOT_CENTER_X , -MID_FOOT_CENTER_Y+ perturbation, -(MID_FOOT_CENTER_Z + 20 )]), self.joints)
-                time.sleep(0.001)
-        for perturbation in range( (int)(MED_DIST*MED_VEL), 0,-1):
-            perturbation /= MED_VEL
-            myLeg.perform_IK(
-                np.array([ MID_FOOT_CENTER_X, -MID_FOOT_CENTER_Y + perturbation, -(MID_FOOT_CENTER_Z + 20 )]), self.joints)
-            time.sleep(0.001)
+    # def test_LegSideToSide(self):
+    #     print "> test_LegSideToSide"
+    #     myLeg = rhombusLeg.rhombusLeg("LegFR",self.legs,self.dynM)
+    #     for perturbation in range(0,(int)(MED_DIST*MED_VEL),1):
+    #         perturbation /= MED_VEL
+    #         myLeg.perform_IK(
+    #             np.array([ MID_FOOT_CENTER_X, -MID_FOOT_CENTER_Y + perturbation, -(MID_FOOT_CENTER_Z + 20 )]), self.joints)
+    #         time.sleep(0.001)
+    #     for rep in range(0,4):
+    #         for perturbation in range((int)(MED_DIST*MED_VEL), -(int)(MED_DIST*MED_VEL), -1):
+    #             perturbation /= MED_VEL
+    #             myLeg.perform_IK(
+    #                 np.array([ MID_FOOT_CENTER_X, -MID_FOOT_CENTER_Y + perturbation, -(MID_FOOT_CENTER_Z + 20 )]), self.joints)
+    #             time.sleep(0.001)
+    #         for perturbation in range(-(int)(MED_DIST*MED_VEL),(int)(MED_DIST*MED_VEL), 1):
+    #             perturbation /= MED_VEL
+    #             myLeg.perform_IK(
+    #                 np.array([ MID_FOOT_CENTER_X , -MID_FOOT_CENTER_Y+ perturbation, -(MID_FOOT_CENTER_Z + 20 )]), self.joints)
+    #             time.sleep(0.001)
+    #     for perturbation in range( (int)(MED_DIST*MED_VEL), 0,-1):
+    #         perturbation /= MED_VEL
+    #         myLeg.perform_IK(
+    #             np.array([ MID_FOOT_CENTER_X, -MID_FOOT_CENTER_Y + perturbation, -(MID_FOOT_CENTER_Z + 20 )]), self.joints)
+    #         time.sleep(0.001)
 
 
     def tearDown(self):
