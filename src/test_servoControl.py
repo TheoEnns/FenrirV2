@@ -81,15 +81,15 @@ class TestServoControl(unittest.TestCase):
     def tearDown(self):
         print "> tearDown"
         self.dynM.stop()
-        for ID in self.dynM.IDs:
-                self.dynM.write_goal(ID,2048)
+        for name in self.joints.keys():
+            self.dynM.write_goal(self.joints[name].ID, self.joints[name].center)
         self.dynM.command_goals()
 
     def setUp(self):
         print "> setUp"
         self.dynM = motorDriver.DynamixelMaster()
         self.dynM.start()
-        self.joints, legs = configLoader.load_servos_config(self.dynM, "servos.yaml")
+        self.joints, segments = configLoader.load_servos_config(self.dynM, "servos.yaml")
 
 
 if __name__ == '__main__':
