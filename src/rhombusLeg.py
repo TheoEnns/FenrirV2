@@ -54,7 +54,7 @@ class rhombusLeg():
         footAnchor = floorTarget + np.array([ forward_roll, left_roll, 0])
         footCenter = footAnchor + np.array([ 0,
                                              0,
-                                             0.5*self.FootX*math.cos(left_angle)])
+                                             -0.5*self.FootX*math.cos(left_angle)])
         return True, footCenter, footAnchor
 
     def _solve_Hip(self, footCenter):

@@ -48,7 +48,7 @@ UPDATE_TIME = 0.001
 TIMER = 3
 MED_VEL = 10.0*(UPDATE_TIME/0.001)
 MED_DIST = 30
-REPS = 2
+REPS = 4
 
 def linear_path(legs,joints,x1,y1,z1,x2,y2,z2,timer):
     max = (int)(timer/UPDATE_TIME)
