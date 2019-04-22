@@ -131,28 +131,28 @@ servos:
     min_safe_ticks: 1024
     max_safe_ticks: 3072
     default_loc_ticks: 3072
-  28:
-    ID: 28
-    name: HeadGearR
-    center: 2048
-    swing: 2048
-    polarity: 1.0
-    min_degrees: -180.0
-    max_degrees: 180.0
-    min_safe_ticks: 1024
-    max_safe_ticks: 3072
-    default_loc_ticks: 2048
-  29:
-    ID: 29
-    name: HeadGearL
-    center: 2048
-    swing: 2048
-    polarity: -1.0
-    min_degrees: -180.0
-    max_degrees: 180.0
-    min_safe_ticks: 1024
-    max_safe_ticks: 3072
-    default_loc_ticks: 2048
+#  28:
+#    ID: 28
+#    name: HeadGearR
+#    center: 2048
+#    swing: 2048
+#    polarity: 1.0
+#    min_degrees: -180.0
+#    max_degrees: 180.0
+#    min_safe_ticks: 1024
+#    max_safe_ticks: 3072
+#    default_loc_ticks: 2048
+#  29:
+#    ID: 29
+#    name: HeadGearL
+#    center: 2048
+#    swing: 2048
+#    polarity: -1.0
+#    min_degrees: -180.0
+#    max_degrees: 180.0
+#    min_safe_ticks: 1024
+#    max_safe_ticks: 3072
+#    default_loc_ticks: 2048
 #  30:
 #    ID: 30
 #    name: HeadPivotL
